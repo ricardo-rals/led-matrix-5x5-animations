@@ -34,12 +34,10 @@ void animacao_coracao(PIO pio, uint sm){
         {0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0},
     };
 
-    // Realiza a contagem regressiva de 5 até 1
     for (int i = 1; i <= 9 ; i++) {
-        // Exibe o número na matriz de LEDs
         for (int j = 0; j < 25; j++) {
-            pio_sm_put_blocking(pio, sm, matrix_rgb( 0.0,frames[i - 1][j], 0.0));  // RGB com intensidade
+            pio_sm_put_blocking(pio, sm, matrix_rgb( 0.0, frames[i - 1][j], 0.0));  // Envia intensidade para o LED vermelho
         }
-        sleep_ms(500);  // Pausa de 1 segundo
+        sleep_ms(500); // Pausa de 0.5 segundos
     }
 }
