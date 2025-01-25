@@ -3,7 +3,7 @@
 
 #include "pico/stdlib.h"
 
-void iniciar_keyoad();
+void iniciar_keypad();
 char ler_keypad();
 
 #endif // KEYPAD_H
