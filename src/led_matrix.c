@@ -1,4 +1,4 @@
-#include "led_matrix.h"
+#include "../includes/led_matrix.h"
 
 uint32_t matrix_rgb(double b, double r, double g) {
     unsigned char R = r * 255;
@@ -13,7 +13,7 @@ void limpar_todos_leds(PIO pio, uint sm) {
     }
 }
 
-void acender_todos_leds(PIO pio, uint sm, double r, double g, double b) {
+void acender_leds(PIO pio, uint sm, double r, double g, double b) {
     for (int i = 0; i < NUM_PIXELS; i++) {
         pio_sm_put_blocking(pio, sm, matrix_rgb(b, r, g));
     }

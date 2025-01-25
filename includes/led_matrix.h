@@ -8,6 +8,6 @@
 
 uint32_t matrix_rgb(double b, double r, double g);
 void limpar_todos_leds(PIO pio, uint sm);
-void acender_todos_leds(PIO pio, uint sm, double r, double g, double b);
+void acender_leds(PIO pio, uint sm, double r, double g, double b);
 
 #endif // LED_MATRIX_H
