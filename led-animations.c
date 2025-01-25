@@ -24,6 +24,7 @@ int main() {
         if (key) {
             switch (key) {
                 case '1': animacao_espiral(pio, sm); limpar_todos_leds(pio, sm); break;  // Animação 1
+                case '2': animacao_coracao(pio, sm); limpar_todos_leds(pio, sm); break;
                 case 'A': limpar_todos_leds(pio, sm); break;        // Desliga todos os LEDs
                 case 'B': acender_leds(pio, sm, 0.0, 0.0, 1.0); break;  // Azul (100%)
             }
