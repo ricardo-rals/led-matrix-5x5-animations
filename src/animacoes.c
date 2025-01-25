@@ -41,3 +41,38 @@ void animacao_coracao(PIO pio, uint sm){
         sleep_ms(500); // Pausa de 0.5 segundos
     }
 }
+
+void animacao_cruz(PIO pio, uint sm) {
+    double frames[3][25] = {
+        // Acendo o Led do meio
+        {0.0, 0.0, 0.0, 0.0, 0.0,
+         0.0, 0.0, 0.0, 0.0, 0.0,
+         0.0, 0.0, 1.0, 0.0, 0.0,
+         0.0, 0.0, 0.0, 0.0, 0.0,
+         0.0, 0.0, 0.0, 0.0, 0.0},
+        // Expande em quatro direções
+        {0.0, 0.0, 1.0, 0.0, 0.0,
+         0.0, 0.0, 1.0, 0.0, 0.0,
+         1.0, 1.0, 1.0, 1.0, 1.0,
+         0.0, 0.0, 1.0, 0.0, 0.0,
+         0.0, 0.0, 1.0, 0.0, 0.0},
+        // Completa a cruz
+        {0.0, 0.0, 1.0, 0.0, 0.0,
+         0.0, 0.0, 1.0, 0.0, 0.0,
+         1.0, 1.0, 1.0, 1.0, 1.0,
+         0.0, 0.0, 1.0, 0.0, 0.0,
+         0.0, 0.0, 1.0, 0.0, 0.0}
+    };
+
+    for (int frame = 0; frame < 3; frame++) {  
+        for (int i = 0; i < 25; i++) {  
+            if (frames[frame][i] > 0.0) {
+                pio_sm_put_blocking(pio, sm, matrix_rgb(frames[frame][i], 0.0, 0.0 ));  // Azul
+            } else {
+                pio_sm_put_blocking(pio, sm, 0x000000);  
+            }
+        }
+        sleep_ms(200);  
+    }
+    limpar_todos_leds(pio, sm);  
+}
