@@ -46,6 +46,7 @@ pico_enable_stdio_usb(led-animations 1)
 
 # Add the standard library to the build
 target_link_libraries(led-animations
+        hardware_pio
         pico_stdlib)
 
 # Add the standard include files to the build
