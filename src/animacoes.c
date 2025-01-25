@@ -76,3 +76,43 @@ void animacao_cruz(PIO pio, uint sm) {
     }
     limpar_todos_leds(pio, sm);  
 }
+
+void animacao_balada(PIO pio, uint sm) {
+    int camadas[5][25] = {
+        {1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1}, 
+        {0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+    };
+
+    // Padrão de fora para dentro
+    for (int camada = 0; camada < 5; camada++) {
+        for (int i = 0; i < 25; i++) {
+            if (camadas[camada][i]) {
+                pio_sm_put_blocking(pio, sm, matrix_rgb(0.0, 1.0, 1.0)); // Liga LED na cor amarela
+            } else {
+                pio_sm_put_blocking(pio, sm, matrix_rgb(0.0, 0.0, 0.0)); // Desliga LED
+            }
+        }
+        sleep_ms(200); // Espera 200 ms
+    }
+
+    // Pausa com o LED central aceso e apagando
+    pio_sm_put_blocking(pio, sm, matrix_rgb(0.0, 1.0, 1.0)); // Acende o LED central (amarelo)
+    sleep_ms(300);
+    pio_sm_put_blocking(pio, sm, matrix_rgb(0.0, 0.0, 0.0)); // Apaga o LED central
+    sleep_ms(300);
+
+    // Padrão de dentro para fora
+    for (int camada = 4; camada >= 0; camada--) {
+        for (int i = 0; i < 25; i++) {
+            if (camadas[camada][i]) {
+                pio_sm_put_blocking(pio, sm, matrix_rgb(0.0, 1.0, 1.0)); // Liga LED na cor amarela
+            } else {
+                pio_sm_put_blocking(pio, sm, matrix_rgb(0.0, 0.0, 0.0)); // Desliga LED
+            }
+        }
+        sleep_ms(200); // Espera 200 ms
+    }
+}
