@@ -44,31 +44,31 @@ void animacao_coracao(PIO pio, uint sm){
 
 void animacao_cruz(PIO pio, uint sm) {
     double frames[5][25] = {
-        // Frame 1: Apenas o LED central aceso
+        // Frame 1
         {0.0, 0.0, 0.0, 0.0, 0.0,
          0.0, 0.0, 0.0, 0.0, 0.0,
          1.0, 1.0, 0.0, 0.0, 0.0,
          0.0, 0.0, 0.0, 0.0, 0.0,
          0.0, 0.0, 0.0, 0.0, 0.0},
-        // Frame 2: Expansão inicial (LEDs adjacentes ao centro)
+        // Frame 2
         {0.0, 0.0, 1.0, 0.0, 0.0,
          0.0, 0.0, 1.0, 0.0, 0.0,
          1.0, 1.0, 0.0, 0.0, 0.0,
          0.0, 0.0, 0.0, 0.0, 0.0,
          0.0, 0.0, 0.0, 0.0, 0.0},
-        // Frame 3: Expansão intermediária
+        // Frame 3
         {0.0, 0.0, 1.0, 0.0, 0.0,
          0.0, 0.0, 1.0, 0.0, 0.0,
          1.0, 1.0, 0.0, 1.0, 1.0,
          0.0, 0.0, 0.0, 0.0, 0.0,
          0.0, 0.0, 0.0, 0.0, 0.0},
-        // Frame 4: Expansão quase completa
+        // Frame 4
         {0.0, 0.0, 1.0, 0.0, 0.0,
          0.0, 0.0, 1.0, 0.0, 0.0,
          1.0, 1.0, 0.0, 1.0, 1.0,
          0.0, 0.0, 1.0, 0.0, 0.0,
          0.0, 0.0, 1.0, 0.0, 0.0},
-        // Frame 5: Cruz completa
+        // Frame 5
         {0.0, 0.0, 1.0, 0.0, 0.0,
          0.0, 0.0, 1.0, 0.0, 0.0,
          1.0, 1.0, 1.0, 1.0, 1.0,
@@ -76,15 +76,15 @@ void animacao_cruz(PIO pio, uint sm) {
          0.0, 0.0, 1.0, 0.0, 0.0}
     };
 
-    for (int frame = 0; frame < 5; frame++) {  // Loop pelos 5 frames
-        for (int i = 0; i < 25; i++) {  // Loop por todos os 25 LEDs
+    for (int frame = 0; frame < 5; frame++) {  
+        for (int i = 0; i < 25; i++) {  
             if (frames[frame][i] > 0.0) {
-                pio_sm_put_blocking(pio, sm, matrix_rgb(frames[frame][i], 0.0, 0.0));  // Vermelho
+                pio_sm_put_blocking(pio, sm, matrix_rgb(frames[frame][i], 0.0, 0.0));  // Azul
             } else {
                 pio_sm_put_blocking(pio, sm, 0x000000);  // Desliga o LED
             }
         }
-        sleep_ms(200);  // Atraso entre os frames
+        sleep_ms(300);  // Atraso entre os frames
     }
     limpar_todos_leds(pio, sm);  // Limpa os LEDs após a animação
 }
