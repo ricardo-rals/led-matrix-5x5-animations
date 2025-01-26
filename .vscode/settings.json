@@ -35,13 +35,5 @@
     "raspberry-pi-pico.cmakeAutoConfigure": true,
     "raspberry-pi-pico.useCmakeTools": false,
     "raspberry-pi-pico.cmakePath": "${HOME}/.pico-sdk/cmake/v3.29.9/bin/cmake",
-    "raspberry-pi-pico.ninjaPath": "${HOME}/.pico-sdk/ninja/v1.12.1/ninja",
-    "files.associations": {
-        "animacoes.h": "c",
-        "stdlib.h": "c",
-        "pio.h": "c",
-        "buzzer.h": "c",
-        "led_matrix.h": "c",
-        "clocks.h": "c"
-    }
+    "raspberry-pi-pico.ninjaPath": "${HOME}/.pico-sdk/ninja/v1.12.1/ninja"
 }
