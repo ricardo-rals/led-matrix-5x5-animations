@@ -33,7 +33,26 @@ int main() {
                 case '6': animacao_seta(pio,sm); limpar_todos_leds(pio, sm); break; //Animação 6
                 case '7': tocar_marcha_imperial(pio, sm); break;  //Animação 7
                 case 'A': limpar_todos_leds(pio, sm); break;        // Desliga todos os LEDs
-                case 'B': acender_leds(pio, sm, 0.0, 0.0, 1.0); break;  // Azul (100%)
+                case 'B': 
+                   acender_leds(pio, sm, 0.0, 0.0, 1.0);
+                   sleep_ms(3000); //ligados por 3 segundos
+                   limpar_todos_leds(pio, sm); // apaga os leds
+                   break;  // Azul (100%)
+                case 'C': 
+                   acender_leds(pio, sm, 0.8, 0.0, 0.0); // Vermelho (80%)
+                   sleep_ms(3000); //ligados por 3 segundos
+                   limpar_todos_leds(pio, sm); // apaga os leds
+                   break; 
+                case 'D': 
+                   acender_leds(pio, sm, 0.0, 0.5, 0.0); //Verde (50%)
+                   sleep_ms(3000); //ligados por 3 segundos
+                   limpar_todos_leds(pio, sm); // apaga os leds
+                   break; 
+                case '#': 
+                   acender_leds(pio, sm, 0.2, 0.2, 0.2);//Branco (20%)
+                   sleep_ms(3000); //ligados por 3 segundos
+                   limpar_todos_leds(pio, sm); // apaga os leds
+                   break; 
             }
             sleep_ms(200);  // Debounce
         }
