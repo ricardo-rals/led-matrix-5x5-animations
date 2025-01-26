@@ -26,6 +26,9 @@ int main() {
                 case '1': animacao_espiral(pio, sm); limpar_todos_leds(pio, sm); break;  // Animação 1
                 case '2': animacao_coracao(pio, sm); limpar_todos_leds(pio, sm); break;
                 case '3': animacao_cruz(pio, sm); limpar_todos_leds(pio, sm); break; //Animação 3
+                case '4': animacao_balada(pio, sm); limpar_todos_leds(pio, sm); break; //Animação 4
+                case '5': animacao_emoji(pio,sm); limpar_todos_leds(pio, sm); break; //Animação 5
+                case '6': animacao_seta(pio,sm); limpar_todos_leds(pio, sm); break; //Animação 6
                 case 'A': limpar_todos_leds(pio, sm); break;        // Desliga todos os LEDs
                 case 'B': acender_leds(pio, sm, 0.0, 0.0, 1.0); break;  // Azul (100%)
             }
