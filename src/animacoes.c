@@ -190,3 +190,23 @@ void animacao_seta(PIO pio, uint sm) {
         }
     }
 }
+
+
+void animacao_darth_vader(PIO pio, uint sm) {
+    // Frame representando a máscara do Darth Vader
+    double frame[25] = {
+        0.0, 1.0, 1.0, 1.0, 0.0,  // Linha 1
+        1.0, 0.0, 1.0, 0.0, 1.0,  // Linha 2
+        1.0, 1.0, 1.0, 1.0, 1.0,  // Linha 3
+        0.0, 1.0, 0.0, 1.0, 0.0,  // Linha 4
+        0.0, 1.0, 1.0, 1.0, 0.0   // Linha 5
+    };
+
+
+    // Exibindo a imagem
+    for (int repeat = 0; repeat < 3; repeat++) {
+        for (int i = NUM_PIXELS - 1; i >= 0; i--) {
+            pio_sm_put_blocking(pio, sm, matrix_rgb(frame[i], 0.0, 0.0 )); // Cor vermelha para o Darth Vader
+        }
+    }
+}

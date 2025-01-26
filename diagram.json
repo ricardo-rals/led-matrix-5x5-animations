@@ -151,7 +151,7 @@
     [ "keypad1:C3", "pico:GP22", "green", [ "v0" ] ],
     [ "keypad1:C4", "pico:GP26", "green", [ "v0" ] ],
     [ "bz1:2", "pico:GP15", "green", [ "v0" ] ],
-    [ "bz1:1", "pico:GND.4", "green", [ "v0" ] ]
+    [ "bz1:1", "pico:GND.4", "black", [ "v0" ] ]
   ],
   "dependencies": {}
 }

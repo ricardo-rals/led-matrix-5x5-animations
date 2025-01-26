@@ -1,6 +1,6 @@
 #include "../includes/led_matrix.h"
 
-uint32_t matrix_rgb(double b, double r, double g) {
+uint32_t matrix_rgb(double r, double g, double b) {
     unsigned char R = r * 255;
     unsigned char G = g * 255;
     unsigned char B = b * 255;
