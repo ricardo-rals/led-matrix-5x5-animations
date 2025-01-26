@@ -35,7 +35,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(led-animations led-animations.c src/animacoes.c src/buzzer.c src/keypad.c src/led_matrix.c)
+add_executable(led-animations led-animations.c src/animacoes.c src/buzzer.c src/keypad.c src/led_matrix.c beeps/marcha_imperial.c)
 
 pico_set_program_name(led-animations "led-animations")
 pico_set_program_version(led-animations "0.1")
@@ -50,6 +50,7 @@ target_link_libraries(led-animations
         hardware_pio
 	    hardware_adc
         hardware_pwm
+        pico_stdio_usb
         pico_bootrom
         pico_stdlib)
 

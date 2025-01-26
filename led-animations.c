@@ -4,6 +4,7 @@
 #include "./includes/buzzer.h"
 #include "./includes/led_matrix.h"
 #include "./includes/animacoes.h"
+#include "./includes/marcha_imperial.h"
 #include "hardware/clocks.h"
 
 // Arquivo .pio
@@ -18,6 +19,7 @@ int main() {
 
     stdio_init_all();  // Inicializa a comunicação serial (para debug)
     iniciar_keypad();     // Inicializa o teclado matricial
+    pwm_init_buzzer(BUZZER);
 
     while (true) {
         char key = ler_keypad();  // Lê o teclado matricial
@@ -29,6 +31,7 @@ int main() {
                 case '4': animacao_balada(pio, sm); limpar_todos_leds(pio, sm); break; //Animação 4
                 case '5': animacao_emoji(pio,sm); limpar_todos_leds(pio, sm); break; //Animação 5
                 case '6': animacao_seta(pio,sm); limpar_todos_leds(pio, sm); break; //Animação 6
+                case '7': tocar_marcha_imperial(pio, sm); break;  //Animação 7
                 case 'A': limpar_todos_leds(pio, sm); break;        // Desliga todos os LEDs
                 case 'B': acender_leds(pio, sm, 0.0, 0.0, 1.0); break;  // Azul (100%)
             }
