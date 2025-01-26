@@ -8,5 +8,5 @@ void animacao_coracao(PIO pio, uint sm);
 void animacao_cruz(PIO pio, uint sm);
 void animacao_balada(PIO pio, uint sm);
 void animacao_emoji(PIO pio, uint sm);
-
+void animacao_seta(PIO pio, uint sm);
 #endif // ANIMACOES_H
