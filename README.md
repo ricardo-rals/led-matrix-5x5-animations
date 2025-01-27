@@ -54,7 +54,7 @@ project/
 |Ricardo Augusto Lima da Silva   |
 |Dorivaldo Jesus da Silva Júnior | 
 |Guilherme Miller Gama Cardoso   | 
-|Adson Oliveira Albao            |
+|Adson Oliveira Albano           |
 |Isabella Carvalho Andrade       |
 |Arthur Silva Santos Argollo     | 
 
