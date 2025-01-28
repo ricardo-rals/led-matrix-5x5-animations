@@ -6,6 +6,7 @@
 #include "./includes/animacoes.h"
 #include "./includes/marcha_imperial.h"
 #include "hardware/clocks.h"
+#include "pico/bootrom.h"
 
 // Arquivo .pio
 #include "pio_matrix.pio.h"
@@ -53,6 +54,9 @@ int main() {
                    sleep_ms(3000); //ligados por 3 segundos
                    limpar_todos_leds(pio, sm); // apaga os leds
                    break; 
+                case '*':
+                    reset_usb_boot(0, 0);
+                    break;
             }
             sleep_ms(200);  // Debounce
         }
