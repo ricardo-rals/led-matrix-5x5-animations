@@ -24,6 +24,9 @@ O código está organizado em funções principais para inicialização e contro
 ```
 project/
 │
+├── beeps/
+│   ├── marcha_imperial.c
+│
 ├── includes/
 │   ├── animacoes.h
 │   ├── buzzer.h
@@ -57,6 +60,7 @@ project/
 |Adson Oliveira Albano           |
 |Isabella Carvalho Andrade       |
 |Arthur Silva Santos Argollo     | 
+|Jabson Gama Santana Junior      |
 
 ## **Link com a produção do vídeo:**
 https://youtube.com/shorts/0cR-x1ztTEw
